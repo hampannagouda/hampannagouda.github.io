@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HAMPANNA GOUDA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrapper {
+      min-height: 100vh;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .name-block h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .name-block p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.9rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      color: #e5e7eb;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid #1e293b;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #f9fafb;
+    }
+
+    .about-text {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .skill-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      font-size: 0.85rem;
+      background: #020617;
+    }
+
+    .project {
+      margin-bottom: 12px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+    .project-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .wrapper { padding: 32px 24px 40px; }
+      header { padding-bottom: 20px; margin-bottom: 30px; }
+      .name-block h1 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="name-block">
+        <!-- 🔹 CHANGE THIS TO YOUR NAME & ROLE -->
+        <h1>HAMPANNA GOUDA</h1>
+        <p>Computer Science Student | Aspiring Software Developer</p>
+        <span class="tag">Open to Internships & Fresher Roles</span>
+      </div>
+
+      <div class="contact-links">
+        <!-- 🔹 UPDATE THESE LINKS -->
+        <a href="mailto:hampannagouda18@gmail.com">hampannagouda18@gmail.com</a>
+        <a href="https://www.linkedin.com/in/hampanna-gouda-39518b25a/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/hampannagouda" target="_blank">GitHub</a>
+        <!-- You can add more: LeetCode, CodeChef, etc. -->
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <!-- 🔹 WRITE 3–5 LINES ABOUT YOU -->
+      <p class="about-text">
+        I am a Computer Science student with a strong interest in web development,
+        artificial intelligence, and problem solving. I enjoy building projects,
+        learning new technologies, and applying my skills to real-world problems.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <!-- 🔹 EDIT SKILLS FOR YOUR PROFILE -->
+      <div class="skills-grid">
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">React, Node, Express</span>
+        <span class="skill-pill">Machine Learning (Basics)</span>
+        <span class="skill-pill">Git & GitHub</span>
+        <span class="skill-pill">OOPs</span>
+        <span class="skill-pill">DSA</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- 🔹 PROJECT 1 -->
+      <div class="project">
+        <div class="project-title">Heart Disease Prediction</div>
+        <div class="project-meta">Machine Learning | Logistic Regression, Random Forest, SVM</div>
+        <p class="project-desc">
+          Built a model to predict the possibility of heart disease using medical
+          data. Performed data preprocessing, feature selection, model training, and
+          evaluation, and compared performance of multiple algorithms.
+        </p>
+      </div>
+
+      <!-- 🔹 PROJECT 2 -->
+      <div class="project">
+        <div class="project-title">Stock Price Prediction</div>
+        <div class="project-meta">Deep Learning | LSTM | Real-time Data</div>
+        <p class="project-desc">
+          Implemented an LSTM-based model to predict stock prices using historical
+          data, technical indicators, and real-time APIs. Visualized predictions and
+          actual prices to evaluate performance.
+        </p>
+      </div>
+
+      <!-- 🔹 PROJECT 3 -->
+      <div class="project">
+        <div class="project-title">Smart Feeder: IoT-based Automatic Pet Feeder</div>
+        <div class="project-meta">IoT | Embedded Systems | Blynk / Cloud</div>
+        <p class="project-desc">
+          Designed an IoT-based pet feeder that dispenses food automatically based
+          on a schedule and can be controlled remotely via a mobile application.
+        </p>
+      </div>
+
+      <!-- 🔹 You can copy-paste and add more project blocks like this -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="about-text">
+        If you’d like to discuss an opportunity, project, or collaboration, feel free to reach out.
+      </p>
+      <p class="about-text">
+        📧 Email: <a href="mailto:hampannagouda18@gmail.com">hampannagouda18@gmail.com</a><br />
+        🔗 LinkedIn: <a href="https://www.linkedin.com/in/hampanna-gouda-39518b25a" target="_blank">linkedin.com/in/hampanna-gouda-39518b25a</a>
+      </p>
+    </section>
+
+    <div class="footer-note">
+      © <span id="year"></span> Hampanna gouda. Built with HTML & CSS.
+    </div>
+  </div>
+
+  <script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

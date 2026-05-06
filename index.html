@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hampanna Gouda — CSE Student | AI & ML | Full Stack Dev</title>
+<title>Hampanna Gouda — CSE Student | AI & ML | Full Stack Dev | DevOps</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -118,13 +118,28 @@
   .project-link:hover{border-color:var(--accent);color:var(--accent);}
   .project-body{padding:0 1.8rem 1.8rem;flex:1;}
   .feat-badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:.2rem .55rem;border-radius:.2rem;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);color:var(--accent3);letter-spacing:.08em;text-transform:uppercase;display:inline-block;margin-bottom:.5rem;}
+  .devops-badge{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:.2rem .55rem;border-radius:.2rem;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:var(--accent);letter-spacing:.08em;text-transform:uppercase;display:inline-block;margin-bottom:.5rem;}
   .project-title{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;}
   .project-desc{color:#94a3b8;font-size:.87rem;line-height:1.75;margin-bottom:1.1rem;}
   .project-tech{display:flex;flex-wrap:wrap;gap:.35rem;}
   .project-tech .tag{font-size:.62rem;}
 
+  /* ROADMAP */
+  #roadmap{padding:7rem 5vw;background:var(--bg2);}
+  .roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2.5rem;}
+  .roadmap-card{background:var(--surface);border:1px solid var(--border);border-radius:.7rem;padding:1.4rem;transition:border-color .2s,transform .2s;}
+  .roadmap-card:hover{border-color:var(--accent3);transform:translateY(-2px);}
+  .roadmap-card .status{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;padding:.2rem .6rem;border-radius:.2rem;display:inline-block;}
+  .status.done{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);color:var(--accent3);}
+  .status.progress{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);color:var(--accent);}
+  .status.soon{background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.25);color:var(--accent2);}
+  .roadmap-card h4{font-size:.9rem;font-weight:700;margin-bottom:.4rem;}
+  .roadmap-card p{font-size:.77rem;color:var(--muted);line-height:1.6;}
+  .roadmap-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:1rem;overflow:hidden;}
+  .roadmap-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent3),var(--accent));}
+
   /* STATS */
-  #stats{padding:6rem 5vw;background:var(--bg2);}
+  #stats{padding:6rem 5vw;}
   .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;}
   .stats-card{background:var(--surface);border:1px solid var(--border);border-radius:.75rem;overflow:hidden;transition:border-color .2s;}
   .stats-card:hover{border-color:var(--accent);}
@@ -161,7 +176,7 @@
     .hero-stats{gap:1.5rem;}
   }
   @media(max-width:600px){
-    .mini-cards,.projects-grid,.skills-grid{grid-template-columns:1fr;}
+    .mini-cards,.projects-grid,.skills-grid,.roadmap-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -178,6 +193,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#stats">Stats</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -203,15 +219,16 @@
     </p>
 
     <p class="hero-quote">
-      "Turning ideas into intelligent systems using AI, Machine Learning, and Full Stack Development."
+      "Turning ideas into intelligent, scalable systems using AI, DevOps, and Full Stack Development."
     </p>
 
     <p class="hero-desc">
-      Passionate about building <strong style="color:var(--text)">intelligent systems</strong> and
-      <strong style="color:var(--text)">scalable web applications</strong>.
+      Passionate about building <strong style="color:var(--text)">intelligent systems</strong>,
+      <strong style="color:var(--text)">scalable web applications</strong>, and
+      <strong style="color:var(--text)">automated cloud infrastructure</strong>.
       Currently pursuing B.Tech in Computer Science at
       <strong style="color:var(--text)">Dayananda Sagar University</strong>,
-      with a focus on AI, Machine Learning, and modern web technologies.
+      focusing on AI/ML, DevOps, and modern web technologies.
     </p>
 
     <div class="hero-btns">
@@ -224,9 +241,10 @@
     </div>
 
     <div class="hero-stats">
-      <div><span class="stat-val">4+</span><span class="stat-lbl">Projects Built</span></div>
-      <div><span class="stat-val">6+</span><span class="stat-lbl">Tech Stacks</span></div>
+      <div><span class="stat-val">6+</span><span class="stat-lbl">Projects Built</span></div>
+      <div><span class="stat-val">8+</span><span class="stat-lbl">Tech Stacks</span></div>
       <div><span class="stat-val">3+</span><span class="stat-lbl">Years Coding</span></div>
+      <div><span class="stat-val">∞</span><span class="stat-lbl">Learning Mode</span></div>
     </div>
   </div>
 
@@ -244,16 +262,17 @@
       <h2 class="section-title">Building things that <em>matter</em></h2>
 
       <div class="about-text">
-        <p>I'm <strong>Hampanna Gouda</strong>, a Computer Science student at <strong>Dayananda Sagar University</strong> with a deep interest in Artificial Intelligence, Machine Learning, and Full Stack Development.</p>
-        <p>I enjoy solving real-world problems through technology — combining <strong>data, intelligence, and clean interfaces</strong> into meaningful applications.</p>
-        <p>My goal is to grow into an <strong>AI Engineer</strong>, contributing to innovative technologies that create real-world impact.</p>
+        <p>I'm <strong>Hampanna Gouda</strong>, a Computer Science student at <strong>Dayananda Sagar University</strong> with a deep interest in Artificial Intelligence, Machine Learning, DevOps, and Full Stack Development.</p>
+        <p>I enjoy solving real-world problems — combining <strong>data, intelligence, cloud automation, and clean interfaces</strong> into meaningful applications. From containerized deployments to ML pipelines, I love working end-to-end.</p>
+        <p>My goal is to grow into an <strong>AI/DevOps Engineer</strong>, building systems that are intelligent, automated, and production-ready.</p>
       </div>
 
       <div class="bio-tags">
         <div class="bio-tag"><span>💡</span><span>B.Tech CSE @ Dayananda Sagar University</span></div>
-        <div class="bio-tag"><span>🤖</span><span>Interested in AI, ML &amp; Full Stack Development</span></div>
-        <div class="bio-tag"><span>📊</span><span>Building intelligent prediction systems using ML &amp; DL</span></div>
-        <div class="bio-tag"><span>🌱</span><span>Learning System Design, AI Agents &amp; Cloud Technologies</span></div>
+        <div class="bio-tag"><span>🚀</span><span>Learning DevOps, Cloud &amp; MLOps actively</span></div>
+        <div class="bio-tag"><span>🐳</span><span>Building with Docker, Kubernetes &amp; CI/CD pipelines</span></div>
+        <div class="bio-tag"><span>🤖</span><span>Exploring ML + DevOps integration (MLOps)</span></div>
+        <div class="bio-tag"><span>🌱</span><span>Currently learning: Terraform, AWS &amp; AI Agents</span></div>
         <div class="bio-tag"><span>⚡</span><span>Pronouns: He / Him &nbsp;·&nbsp; Ask me about OOP &amp; Python</span></div>
       </div>
 
@@ -276,14 +295,15 @@
 <span class="t-line">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Hampanna Gouda"</span>,</span>
 <span class="t-line">&nbsp;&nbsp;<span class="t-key">"university"</span>: <span class="t-str">"Dayananda Sagar University"</span>,</span>
 <span class="t-line">&nbsp;&nbsp;<span class="t-key">"degree"</span>: <span class="t-str">"B.Tech CSE"</span>,</span>
-<span class="t-line">&nbsp;&nbsp;<span class="t-key">"focus"</span>: [<span class="t-str">"AI"</span>, <span class="t-str">"ML"</span>, <span class="t-str">"Full Stack"</span>],</span>
+<span class="t-line">&nbsp;&nbsp;<span class="t-key">"focus"</span>: [<span class="t-str">"AI/ML"</span>, <span class="t-str">"DevOps"</span>, <span class="t-str">"Full Stack"</span>, <span class="t-str">"Cloud"</span>],</span>
 <span class="t-line">&nbsp;&nbsp;<span class="t-key">"building"</span>: [</span>
 <span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Stock Market Prediction (LSTM)"</span>,</span>
-<span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Real-time MERN Web Apps"</span>,</span>
-<span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"AI-powered Systems"</span></span>
+<span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Dockerized CI/CD Pipelines"</span>,</span>
+<span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"K8s Deployment Projects"</span>,</span>
+<span class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str">"Real-time MERN Web Apps"</span></span>
 <span class="t-line">&nbsp;&nbsp;],</span>
-<span class="t-line">&nbsp;&nbsp;<span class="t-key">"learning"</span>: <span class="t-str">"AI Agents &amp; Generative AI"</span>,</span>
-<span class="t-line">&nbsp;&nbsp;<span class="t-key">"ask_me_about"</span>: <span class="t-str">"OOP &amp; Python"</span>,</span>
+<span class="t-line">&nbsp;&nbsp;<span class="t-key">"learning"</span>: <span class="t-str">"Terraform, AWS &amp; MLOps"</span>,</span>
+<span class="t-line">&nbsp;&nbsp;<span class="t-key">"ask_me_about"</span>: <span class="t-str">"OOP, Python &amp; DevOps"</span>,</span>
 <span class="t-line">&nbsp;&nbsp;<span class="t-key">"open_to_work"</span>: <span class="t-val">true</span></span>
 <span class="t-line"><span style="color:#e879f9">}</span></span>
         </div>
@@ -293,22 +313,22 @@
         <div class="mini-card">
           <div class="mini-card-icon">🔭</div>
           <div class="mini-card-title">Currently Working On</div>
-          <div class="mini-card-desc">Stock prediction with LSTM &amp; real-time MERN apps</div>
+          <div class="mini-card-desc">Stock prediction (LSTM), Dockerized apps &amp; K8s deployments</div>
         </div>
         <div class="mini-card">
           <div class="mini-card-icon">🌱</div>
           <div class="mini-card-title">Currently Learning</div>
-          <div class="mini-card-desc">System Design, AI Agents &amp; Advanced DSA</div>
+          <div class="mini-card-desc">Terraform, AWS, MLOps &amp; AI Agents</div>
         </div>
         <div class="mini-card">
           <div class="mini-card-icon">👯</div>
           <div class="mini-card-title">Collaborate On</div>
-          <div class="mini-card-desc">Deep Learning &amp; Full Stack projects</div>
+          <div class="mini-card-desc">Deep Learning, DevOps &amp; Full Stack projects</div>
         </div>
         <div class="mini-card">
           <div class="mini-card-icon">💬</div>
           <div class="mini-card-title">Ask Me About</div>
-          <div class="mini-card-desc">OOP, Python &amp; ML pipelines</div>
+          <div class="mini-card-desc">OOP, Python, ML pipelines &amp; CI/CD</div>
         </div>
       </div>
     </div>
@@ -322,55 +342,58 @@
 
   <div class="skills-grid">
     <div class="skill-card reveal">
+      <div class="skill-icon">🚀</div>
+      <div class="skill-title">DevOps & Cloud</div>
+      <div class="skill-tags">
+        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span>
+        <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Azure</span>
+        <span class="tag">GCP</span><span class="tag">CI/CD</span><span class="tag">Linux</span>
+      </div>
+    </div>
+    <div class="skill-card reveal" style="transition-delay:.08s">
       <div class="skill-icon">💻</div>
       <div class="skill-title">Programming Languages</div>
       <div class="skill-tags">
         <span class="tag">Python</span><span class="tag">Java</span><span class="tag">JavaScript</span>
-        <span class="tag">TypeScript</span><span class="tag">C++</span><span class="tag">SQL</span>
+        <span class="tag">TypeScript</span><span class="tag">C++</span><span class="tag">Bash</span><span class="tag">SQL</span>
       </div>
     </div>
-    <div class="skill-card reveal" style="transition-delay:.08s">
+    <div class="skill-card reveal" style="transition-delay:.16s">
       <div class="skill-icon">🌐</div>
       <div class="skill-title">Web Development</div>
       <div class="skill-tags">
         <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
-        <span class="tag">Next.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
-        <span class="tag">Tailwind CSS</span>
-      </div>
-    </div>
-    <div class="skill-card reveal" style="transition-delay:.16s">
-      <div class="skill-icon">🤖</div>
-      <div class="skill-title">AI &amp; Machine Learning</div>
-      <div class="skill-tags">
-        <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
-        <span class="tag">LSTM</span><span class="tag">Scikit-learn</span>
-        <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span>
+        <span class="tag">Next.js</span><span class="tag">Django</span><span class="tag">Flask</span>
+        <span class="tag">Tailwind CSS</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay:.24s">
-      <div class="skill-icon">🗄️</div>
-      <div class="skill-title">Databases</div>
+      <div class="skill-icon">🤖</div>
+      <div class="skill-title">AI & Machine Learning</div>
       <div class="skill-tags">
-        <span class="tag">MongoDB</span><span class="tag">MySQL</span>
-        <span class="tag">PostgreSQL</span><span class="tag">Firebase</span><span class="tag">SQLite</span>
+        <span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
+        <span class="tag">LSTM</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+        <span class="tag">Scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span>
+        <span class="tag">OpenCV</span><span class="tag">Matplotlib</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay:.32s">
-      <div class="skill-icon">⚙️</div>
-      <div class="skill-title">Tools &amp; Technologies</div>
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-title">Databases & Tools</div>
       <div class="skill-tags">
-        <span class="tag">Git &amp; GitHub</span><span class="tag">Docker</span>
-        <span class="tag">VS Code</span><span class="tag">Postman</span>
-        <span class="tag">Streamlit</span><span class="tag">Linux</span><span class="tag">Azure</span>
+        <span class="tag">MongoDB</span><span class="tag">MySQL</span>
+        <span class="tag">PostgreSQL</span><span class="tag">Firebase</span><span class="tag">SQLite</span>
+        <span class="tag">Git</span><span class="tag">Postman</span><span class="tag">VS Code</span>
+        <span class="tag">Streamlit</span><span class="tag">Vercel</span>
       </div>
     </div>
     <div class="skill-card reveal" style="transition-delay:.4s">
       <div class="skill-icon">🧠</div>
       <div class="skill-title">Currently Exploring</div>
       <div class="skill-tags">
-        <span class="tag">AI Agents</span><span class="tag">Generative AI</span>
+        <span class="tag">MLOps</span><span class="tag">AI Agents</span><span class="tag">Generative AI</span>
         <span class="tag">Prompt Engineering</span><span class="tag">System Design</span>
-        <span class="tag">LLMs</span>
+        <span class="tag">LLMs</span><span class="tag">AWS EC2/S3/IAM</span>
       </div>
     </div>
   </div>
@@ -382,6 +405,8 @@
   <h2 class="section-title reveal">Featured <em>Projects</em></h2>
 
   <div class="projects-grid">
+
+    <!-- ML Projects -->
     <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">📈</div>
@@ -422,7 +447,69 @@
       </div>
     </div>
 
+    <!-- DevOps Projects -->
     <div class="project-card reveal" style="transition-delay:.2s">
+      <div class="project-header">
+        <div class="project-icon">🐳</div>
+        <div class="project-links">
+          <a href="https://github.com/hampannagouda" target="_blank" class="project-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="devops-badge">🚀 DevOps</div>
+        <div class="project-title">Dockerized Web App + CI/CD Pipeline</div>
+        <div class="project-desc">A containerized web application with automated CI/CD pipeline using Jenkins — build, test, and deploy to production automatically on every push.</div>
+        <div class="project-tech">
+          <span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">CI/CD</span>
+          <span class="tag">GitHub Actions</span><span class="tag">Linux</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="transition-delay:.3s">
+      <div class="project-header">
+        <div class="project-icon">☸️</div>
+        <div class="project-links">
+          <a href="https://github.com/hampannagouda" target="_blank" class="project-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="devops-badge">🚀 DevOps</div>
+        <div class="project-title">Kubernetes Deployment Project</div>
+        <div class="project-desc">Deploying and orchestrating containerized microservices on Kubernetes with auto-scaling, load balancing, and rolling updates using kubectl and Helm.</div>
+        <div class="project-tech">
+          <span class="tag">Kubernetes</span><span class="tag">Docker</span>
+          <span class="tag">Helm</span><span class="tag">YAML</span><span class="tag">Linux</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="transition-delay:.4s">
+      <div class="project-header">
+        <div class="project-icon">🌍</div>
+        <div class="project-links">
+          <a href="https://github.com/hampannagouda" target="_blank" class="project-link">
+            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.579.688.481C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="devops-badge">☁️ Cloud</div>
+        <div class="project-title">Infrastructure Automation with Terraform</div>
+        <div class="project-desc">Provisioning cloud infrastructure on AWS using Terraform (IaC) — automating EC2, S3, VPC, and IAM resources with reusable modules and state management.</div>
+        <div class="project-tech">
+          <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">EC2</span>
+          <span class="tag">S3</span><span class="tag">IAM</span><span class="tag">IaC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Stack Projects -->
+    <div class="project-card reveal" style="transition-delay:.5s">
       <div class="project-header">
         <div class="project-icon">🛒</div>
         <div class="project-links">
@@ -432,6 +519,7 @@
         </div>
       </div>
       <div class="project-body">
+        <div class="feat-badge">🌐 Full Stack</div>
         <div class="project-title">Flipkart-like E-Commerce App</div>
         <div class="project-desc">A full-stack MERN application with product management, user authentication, shopping cart, and a responsive modern UI.</div>
         <div class="project-tech">
@@ -442,7 +530,7 @@
       </div>
     </div>
 
-    <div class="project-card reveal" style="transition-delay:.3s">
+    <div class="project-card reveal" style="transition-delay:.6s">
       <div class="project-header">
         <div class="project-icon">📚</div>
         <div class="project-links">
@@ -452,6 +540,7 @@
         </div>
       </div>
       <div class="project-body">
+        <div class="feat-badge">🌐 Full Stack</div>
         <div class="project-title">Real-time Book List App</div>
         <div class="project-desc">A web app with WebSocket-based real-time updates — users add, remove, and track books live with zero page refresh using React and Express.</div>
         <div class="project-tech">
@@ -459,6 +548,64 @@
           <span class="tag">WebSockets</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
         </div>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEARNING ROADMAP -->
+<section id="roadmap">
+  <div class="section-label reveal">Journey</div>
+  <h2 class="section-title reveal">Learning <em>Roadmap</em></h2>
+
+  <div class="roadmap-grid">
+    <div class="roadmap-card reveal">
+      <div class="status done">✅ Completed</div>
+      <h4>Docker Basics</h4>
+      <p>Containerization, Dockerfiles, Docker Compose, image management</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:100%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.07s">
+      <div class="status done">✅ Completed</div>
+      <h4>Kubernetes Fundamentals</h4>
+      <p>Pods, Services, Deployments, Namespaces, kubectl &amp; Helm</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:100%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.14s">
+      <div class="status progress">🔄 In Progress</div>
+      <h4>CI/CD with Jenkins</h4>
+      <p>Automated build, test &amp; deploy pipelines with Jenkins &amp; GitHub Actions</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:65%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.21s">
+      <div class="status progress">🔄 In Progress</div>
+      <h4>Terraform (IaC)</h4>
+      <p>Infrastructure as Code — provisioning AWS resources with Terraform modules</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:50%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.28s">
+      <div class="status progress">🔄 In Progress</div>
+      <h4>AWS Cloud (EC2, S3, IAM)</h4>
+      <p>Cloud compute, storage, identity &amp; access management on AWS</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:40%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.35s">
+      <div class="status progress">🔄 In Progress</div>
+      <h4>Prompt Engineering &amp; LLMs</h4>
+      <p>Building AI-powered systems using LLMs, Agents &amp; Generative AI</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:45%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.42s">
+      <div class="status soon">⏳ Coming Soon</div>
+      <h4>MLOps</h4>
+      <p>Model deployment, monitoring, versioning &amp; end-to-end ML pipelines in production</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:15%"></div></div>
+    </div>
+    <div class="roadmap-card reveal" style="transition-delay:.49s">
+      <div class="status soon">⏳ Coming Soon</div>
+      <h4>System Design</h4>
+      <p>Scalable architectures, microservices, CAP theorem &amp; distributed systems</p>
+      <div class="roadmap-bar"><div class="roadmap-fill" style="width:10%"></div></div>
     </div>
   </div>
 </section>
@@ -494,7 +641,7 @@
     <div class="section-label reveal">Let's Talk</div>
     <h2 class="section-title reveal">Get In <em>Touch</em></h2>
     <p class="contact-desc reveal">
-      I'm always open to collaboration, internships, and exciting tech opportunities. 
+      I'm always open to collaboration, internships, and exciting tech opportunities in AI, DevOps, or Full Stack.
       Feel free to reach out if you'd like to work together or discuss technology and innovation.
     </p>
 
@@ -578,8 +725,16 @@ for(let i=0;i<100;i++)pts.push(mkP());
   requestAnimationFrame(loop);
 })();
 
-/* TYPED */
-const phrases=['Computer Science Student','AI & ML Enthusiast','Full Stack Developer','Deep Learning Researcher','Open Source Contributor'];
+/* TYPED — updated with DevOps roles */
+const phrases=[
+  'Computer Science Student',
+  'AI & ML Enthusiast',
+  'Full Stack Developer',
+  'DevOps Engineer (Learning)',
+  'Cloud & MLOps Explorer',
+  'Deep Learning Researcher',
+  'Open Source Contributor'
+];
 let pi=0,ci=0,del=false,w=0;
 const tel=document.getElementById('typed-text');
 function type(){

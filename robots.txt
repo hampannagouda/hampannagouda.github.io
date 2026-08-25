@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portfolio.html
+Disallow: /index_latest.html
+
+Sitemap: https://hampannagouda.github.io/sitemap.xml

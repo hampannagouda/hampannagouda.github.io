@@ -71,48 +71,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. DIALOG DATABASE
   const responses = {
     greeting: {
-      text: "Hello! 👋 I'm Hampanna's AI Assistant. I can tell you about his skills, projects, learning journey, or how to get in touch. What would you like to explore?",
-      replies: ["🚀 View Projects", "🛠️ Core Skills", "📧 Contact Info", "🌟 Why Hire?"]
+      text: "Hello! 👋 I'm Hampanna's assistant. I can tell you about his projects, skills, experience, or how to get in touch. What would you like to explore?",
+      replies: ["🚀 View Projects", "🛠️ Core Skills", "💼 Experience", "📧 Contact Info"]
     },
     projects: {
-      text: "Hampanna has built several impressive projects across AI/ML, DevOps, and Full Stack development:<br><br>📈 <strong>Stock Price Prediction</strong>: An LSTM model forecasting stock values with a Streamlit dashboard.<br>🐳 <strong>CI/CD Web Pipeline</strong>: Automating code builds and deployment with Docker & Jenkins.<br>☸️ <strong>Kubernetes Microservices</strong>: Orchestrating containerized services with Helm and local clusters.<br>☁️ <strong>Terraform IaC</strong>: Automating AWS resources (EC2, S3, IAM) with modular scripting.<br>🛒 <strong>MERN E-Commerce App</strong>: Flipkart-like app featuring JWT Auth and MongoDB.<br><br>Which project details would you like to see?",
-      replies: ["📈 Stock Prediction", "🐳 CI/CD Pipeline", "☸️ Kubernetes", "☁️ Terraform IaC", "🛒 E-Commerce"]
+      text: "Six featured projects, picked for range rather than volume:<br><br>📈 <strong>AI Stock Prediction</strong>: LSTM model forecasting next-day close, baselined against a Random Forest first.<br>🎫 <strong>Help Desk MCP Server</strong>: A ticketing system exposed as both MCP tools and a REST API.<br>⚡ <strong>VoltFlow</strong>: An enterprise booking platform with real domain modeling (Next.js + Prisma + Postgres).<br>🧭 <strong>GitMCP Studio</strong>: A dashboard that auto-generates UI from any MCP server's schema.<br>🖥️ <strong>Monitor Agent</strong>: A CPU/RAM/disk watchdog with a dry-run-safe design.<br>👔 <strong>Employee Management System</strong>: Java/Spring Boot/Hibernate — his Java Full Stack track.<br><br>Which one do you want details on?",
+      replies: ["📈 Stock Prediction", "🎫 Help Desk MCP", "⚡ VoltFlow", "🧭 GitMCP Studio", "🖥️ Monitor Agent"]
     },
     stock: {
-      text: "📈 <strong>Stock Price Prediction System</strong>:<br>• Built using <strong>Python, LSTM (Deep Learning), Pandas, NumPy, and Streamlit</strong>.<br>• Integrates real-time market data and technical indicators.<br>• Features interactive visualizations to display trend lines and risk parameters.<br>• Codebase available on <a href='https://github.com/hampannagouda' target='_blank'>GitHub ↗</a>",
-      replies: ["🐳 CI/CD Pipeline", "☸️ Kubernetes", "🛠️ Core Skills", "📧 Contact Info"]
+      text: "📈 <strong>AI Stock Prediction System</strong>:<br>• A two-layer LSTM (64→32 units) forecasting next-day closing price from 15 engineered features (RSI, MACD, EMAs, lagged returns).<br>• Uses EarlyStopping and ReduceLROnPlateau instead of a fixed epoch count.<br>• Before committing to the LSTM, he baselined a Random Forest on the same data to justify the architecture choice.<br>• Served through a Streamlit dashboard. Code on <a href='https://github.com/hampannagouda/ai-stock-prediction' target='_blank'>GitHub ↗</a>",
+      replies: ["🎫 Help Desk MCP", "⚡ VoltFlow", "🛠️ Core Skills", "📧 Contact Info"]
     },
-    cicd: {
-      text: "🐳 <strong>Dockerized Web App + CI/CD Pipeline</strong>:<br>• Implemented containerized deployment protocols using <strong>Docker</strong> and <strong>Docker Compose</strong>.<br>• Built a fully automated <strong>Jenkins CI/CD pipeline</strong> to run unit tests and push clean builds to production.<br>• Integrated GitHub Actions for automated linting.<br>• Codebase available on <a href='https://github.com/hampannagouda' target='_blank'>GitHub ↗</a>",
-      replies: ["☸️ Kubernetes", "☁️ Terraform IaC", "🛠️ Core Skills", "📧 Contact Info"]
+    helpdesk: {
+      text: "🎫 <strong>Help Desk Ticket MCP Server</strong>:<br>• An IT ticketing system exposed two ways from one codebase: as <strong>MCP tools</strong> for AI assistants (Claude/Gemini), and as a <strong>FastAPI REST API</strong> for regular clients.<br>• Spec'd with design and requirements docs before the implementation existed.<br>• His most recent build — actively being extended. Code on <a href='https://github.com/hampannagouda/helpdesk-mcp' target='_blank'>GitHub ↗</a>",
+      replies: ["🧭 GitMCP Studio", "📈 Stock Prediction", "🛠️ Core Skills", "📧 Contact Info"]
     },
-    k8s: {
-      text: "☸ <strong>Kubernetes Deployment Project</strong>:<br>• Designed multi-container pod deployments on a local Kubernetes cluster.<br>• Managed networking, DNS service discovery, cluster auto-scaling, and rolling updates.<br>• Configured Helm charts for packaging, updating, and rollbacks.<br>• Codebase available on <a href='https://github.com/hampannagouda' target='_blank'>GitHub ↗</a>",
-      replies: ["☁️ Terraform IaC", "🛒 E-Commerce", "🛠️ Core Skills", "📧 Contact Info"]
+    voltflow: {
+      text: "⚡ <strong>VoltFlow — Service Booking Platform</strong>:<br>• An enterprise-style booking &amp; dispatch platform: 7 related entities (User, Technician, Service, Booking, Invoice, Review, SlotAvailability), not a flat CRUD table.<br>• Next.js 15 client, TypeScript/Express API with JWT + role-based access, PostgreSQL via Prisma, Jest/Supertest tests, all containerized with Docker Compose.<br>• His most production-shaped full-stack project. Code on <a href='https://github.com/hampannagouda/voltflow' target='_blank'>GitHub ↗</a>",
+      replies: ["🎫 Help Desk MCP", "👔 Employee Mgmt", "🛠️ Core Skills", "📧 Contact Info"]
     },
-    terraform: {
-      text: "☁️ <strong>Infrastructure Automation with Terraform & AWS</strong>:<br>• Configured infrastructure-as-code (IaC) modules for rapid deployment on <strong>AWS</strong>.<br>• Automated provisioning of <strong>EC2 compute nodes, S3 storage buckets, secure VPC networking, and IAM roles</strong>.<br>• Managed state locking and backend persistence patterns.<br>• Codebase available on <a href='https://github.com/hampannagouda' target='_blank'>GitHub ↗</a>",
-      replies: ["📈 Stock Prediction", "☸️ Kubernetes", "🛠️ Core Skills", "📧 Contact Info"]
+    gitmcp: {
+      text: "🧭 <strong>GitMCP Studio</strong>:<br>• A dashboard that introspects any MCP server's JSON Schema and auto-generates the UI to run its tools.<br>• Ships with an AI chatbot that falls back across Gemini model tiers automatically on rate limits.<br>• Code on <a href='https://github.com/hampannagouda/git-mcp' target='_blank'>GitHub ↗</a>",
+      replies: ["🖥️ Monitor Agent", "🎫 Help Desk MCP", "🛠️ Core Skills", "📧 Contact Info"]
     },
-    ecommerce: {
-      text: "🛒 <strong>Flipkart-like E-Commerce App (MERN Stack)</strong>:<br>• Fully responsive web application with clean product displays, search, and dynamic cart operations.<br>• Implemented secure <strong>JWT Token Authentication</strong> and product schema management in <strong>MongoDB</strong>.<br><br>📚 Also check out his <strong>Real-time Book List App</strong> utilizing WebSockets for zero-refresh live listing syncs!",
-      replies: ["🛠️ Core Skills", "🚀 View Projects", "📧 Contact Info"]
+    monitor: {
+      text: "🖥️ <strong>Monitor Agent</strong>:<br>• A CPU/RAM/disk monitoring agent with a Flask dashboard.<br>• Dry-run mode is the <em>default</em> — live process termination is explicit opt-in, and critical system processes are protected from being killed.<br>• Code on <a href='https://github.com/hampannagouda/Monitor-agent' target='_blank'>GitHub ↗</a>",
+      replies: ["👔 Employee Mgmt", "⚡ VoltFlow", "🛠️ Core Skills", "📧 Contact Info"]
+    },
+    ems: {
+      text: "👔 <strong>Employee Management System</strong>:<br>• A layered Spring Boot + Hibernate + MySQL CRUD system — REST controllers, a service layer, JPA repositories.<br>• The clearest example of his Java Full Stack training at JSpiders.<br>• Code on <a href='https://github.com/hampannagouda/employee-management-system' target='_blank'>GitHub ↗</a>",
+      replies: ["🚀 View Projects", "🛠️ Core Skills", "📧 Contact Info"]
     },
     skills: {
-      text: "Hampanna's technical arsenal spans multiple domains:<br><br>🚀 <strong>DevOps & Cloud</strong>: Docker, Kubernetes, Jenkins, Terraform, AWS, GCP, CI/CD, Linux<br>💻 <strong>Programming</strong>: Python, Java, JavaScript, TypeScript, C++, Bash, SQL<br>🌐 <strong>Web Dev</strong>: React, Node, Express, Next.js, Django, Flask, Tailwind CSS<br>🤖 <strong>AI & ML</strong>: TensorFlow, PyTorch, LSTM, Scikit-learn, OpenCV, Pandas, NumPy",
-      replies: ["🚀 View Projects", "🌟 Why Hire?", "📧 Contact Info"]
+      text: "Hampanna's skills span a few domains:<br><br>💻 <strong>Languages</strong>: Java, Python, TypeScript, JavaScript, SQL, C++<br>🤖 <strong>AI, Agents &amp; ML</strong>: Model Context Protocol, Claude &amp; Gemini APIs, TensorFlow/Keras, Scikit-learn, YOLOv8, OpenCV<br>🧱 <strong>Backend &amp; Full-Stack</strong>: Spring Boot, Hibernate, FastAPI, Flask, Node.js/Express, Next.js, React<br>🗄️ <strong>Data &amp; Infra</strong>: PostgreSQL, MySQL, MongoDB, Prisma, Docker, Docker Compose, AWS EC2<br>🌱 <strong>Currently exploring</strong>: Kubernetes, Argo CD, Terraform, Vertex AI",
+      replies: ["🚀 View Projects", "💼 Experience", "📧 Contact Info"]
+    },
+    experience: {
+      text: "💼 <strong>Current &amp; past roles</strong>:<br>• <strong>Software Engineering Intern @ Unisys</strong> (Apr 2026–Present) — enterprise software development and workflows.<br>• <strong>Java Full Stack Developer Intern @ JSpiders</strong> (Feb–Apr 2026) — backend, databases, REST APIs, deployment.<br>• <strong>B.Tech CSE @ Dayananda Sagar University</strong> — graduated 2026.",
+      replies: ["🚀 View Projects", "🛠️ Core Skills", "📧 Contact Info"]
     },
     contact: {
-      text: "Here is how you can reach Hampanna:<br><br>📧 <strong>Email</strong>: <a href='mailto:hampannagouda18@gmail.com'>hampannagouda18@gmail.com</a><br>💼 <strong>LinkedIn</strong>: <a href='https://www.linkedin.com/in/hampanna-gouda-39518b25a/' target='_blank'>Hampanna Gouda ↗</a><br>🐙 <strong>GitHub</strong>: <a href='https://github.com/hampannagouda' target='_blank'>hampannagouda ↗</a><br>⚡ <strong>LeetCode</strong>: <a href='https://leetcode.com/hampu_/' target='_blank'>hampu_ ↗</a><br><br>He is actively seeking internship and junior engineering opportunities in AI/DevOps!",
-      replies: ["🌟 Why Hire?", "🚀 View Projects", "🛠️ Core Skills"]
-    },
-    whyhire: {
-      text: "🌟 <strong>Why hire Hampanna?</strong><br>1. <strong>DevOps & AI Hybrid</strong>: Combines a strong understanding of building ML pipelines with advanced container orchestration (K8s/Docker) and CI/CD automation.<br>2. <strong>Practical cloud experience</strong>: Actively provisioning AWS environments using Terraform (IaC).<br>3. <strong>Dedicated learner</strong>: Consistently coding, pursuing B.Tech in CSE at Dayananda Sagar University, and exploring advanced MLOps architectures.",
-      replies: ["📧 Contact Info", "🚀 View Projects", "🛠️ Core Skills"]
+      text: "Here's how to reach Hampanna:<br><br>📧 <strong>Email</strong>: <a href='mailto:hampannagouda18@gmail.com'>hampannagouda18@gmail.com</a><br>💼 <strong>LinkedIn</strong>: <a href='https://www.linkedin.com/in/hampanna-gouda-39518b25a/' target='_blank'>Hampanna Gouda ↗</a><br>🐙 <strong>GitHub</strong>: <a href='https://github.com/hampannagouda' target='_blank'>hampannagouda ↗</a><br>⚡ <strong>LeetCode</strong>: <a href='https://leetcode.com/hampu_/' target='_blank'>hampu_ ↗</a><br><br>He's open to full-time software engineering roles and responds to every message.",
+      replies: ["🚀 View Projects", "🛠️ Core Skills", "💼 Experience"]
     },
     fallback: {
-      text: "I'm not sure I understand that query. 🤖 I can answer questions about Hampanna's projects, skills, education, contact info, and why you should hire him. Try using one of the quick options below or type words like 'Kubernetes', 'LSTM', or 'Email'!",
-      replies: ["🚀 View Projects", "🛠️ Core Skills", "📧 Contact Info", "🌟 Why Hire?"]
+      text: "I'm not sure I caught that. 🤖 I can answer questions about Hampanna's projects, skills, experience, and contact info — try the quick options below, or type something like 'MCP', 'LSTM', 'VoltFlow', or 'email'.",
+      replies: ["🚀 View Projects", "🛠️ Core Skills", "💼 Experience", "📧 Contact Info"]
     }
   };
 
@@ -223,35 +227,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (/\b(hello|hi|hey|greetings|yo|welcome)\b/.test(q)) {
       return responses.greeting;
     }
-    if (/\b(project|projects|work|portfolio|build|developed)\b/.test(q)) {
-      return responses.projects;
-    }
-    if (/\b(stock|prediction|lstm|market|prices|shares)\b/.test(q)) {
+    if (/\b(stock|prediction|lstm|market|prices|shares|random forest)\b/.test(q)) {
       return responses.stock;
     }
-    if (/\b(ci\/cd|jenkins|pipeline|docker|container|dockerized|actions)\b/.test(q)) {
-      return responses.cicd;
+    if (/\b(help ?desk|ticket|mcp server|fastmcp|claude|gemini)\b/.test(q)) {
+      return responses.helpdesk;
     }
-    if (/\b(k8s|kubernetes|helm|orchestrate|cluster|pods|scaling)\b/.test(q)) {
-      return responses.k8s;
+    if (/\b(voltflow|booking|electrical|prisma|technician|invoice)\b/.test(q)) {
+      return responses.voltflow;
     }
-    if (/\b(terraform|aws|cloud|iac|vpc|s3|ec2)\b/.test(q)) {
-      return responses.terraform;
+    if (/\b(gitmcp|git-mcp|git mcp|schema|dashboard studio)\b/.test(q)) {
+      return responses.gitmcp;
     }
-    if (/\b(ecommerce|e-commerce|flipkart|mern|react|node|express|mongodb|full stack|sockets|web-sockets|book)\b/.test(q)) {
-      return responses.ecommerce;
+    if (/\b(monitor|monitoring|cpu|ram|disk|psutil|watchdog)\b/.test(q)) {
+      return responses.monitor;
+    }
+    if (/\b(employee|spring boot|hibernate|jpa|ems)\b/.test(q)) {
+      return responses.ems;
+    }
+    if (/\b(project|projects|work|portfolio|build|developed|mcp)\b/.test(q)) {
+      return responses.projects;
     }
     if (/\b(skills|skill|technologies|languages|stack|frameworks|arsenal|tools)\b/.test(q)) {
       return responses.skills;
     }
+    if (/\b(why hire|hire hampanna|experience|background|who is|unisys|jspiders|internship)\b/.test(q)) {
+      return responses.experience;
+    }
     if (/\b(contact|email|reach|hire|message|socials|linkedin|github|leetcode|phone)\b/.test(q)) {
       return responses.contact;
     }
-    if (/\b(why hire|hire hampanna|about|experience|background|who is)\b/.test(q)) {
-      return responses.whyhire;
-    }
     if (/\b(resume|cv|education|university|degree|college|dsu|dayananda)\b/.test(q)) {
-      return responses.whyhire; // Fall back to whyhire which has education details or custom resume answer
+      return responses.experience;
     }
 
     return responses.fallback;
